@@ -53,6 +53,8 @@
 			
 			&.active {
 				box-shadow: cadetblue 0px 2px 8px;
+				outline: 5px solid limegreen;
+				//outline: content-box
 			}
 			
 			&:last-of-type {

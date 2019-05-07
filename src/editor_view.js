@@ -5,6 +5,7 @@ import _ from "lodash";
 import Canvas_View from "./canvas_view.js";
 import Asset_Manager from "./asset_manager.js";
 import Tile_Palette_Element from "./tile_palette_element.js";
+import Unit_Palette_Element from "./unit_palette_element.js";
 
 import "./editor_view.scss";
 

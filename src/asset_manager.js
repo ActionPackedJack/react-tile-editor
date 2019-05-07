@@ -135,8 +135,60 @@ class Asset_Manager {
 						}],
 					}],
 				}
+			],
+			unit_types: [
+				{
+					name: "grass",
+					variants: [{
+							graphics: [{
+								id: 'grass1',
+								zorder: 0,
+							}],
+						},{
+							graphics: [{
+								id: 'grass2',
+								zorder: 0,
+							}],
+						},{
+							graphics: [{
+								id: 'grass3',
+								zorder: 0,
+							}],
+						},{
+							graphics: [{
+								id: 'grass4',
+								zorder: 0,
+							}],
+						}
+					],
+				},{
+					name: "dirt",
+					variants: [{
+						graphics: [{
+							id: 'dirt1',
+							zorder: 0,
+						}],
+					},{
+						graphics: [{
+							id: 'dirt2',
+							zorder: 0,
+						}],
+					}],
+				},{
+					name: "menhir",
+					variants: [{
+						graphics: [{
+							id: 'dirt1',
+							zorder: 0,
+						},{
+							id: 'menhir1',
+							zorder: 1,
+						}],
+					}],
+				}
 			]
 		};
+		
 		
 	}
 
@@ -240,10 +292,32 @@ class Asset_Manager {
 		
 		return myvar;
 	}
+	get_asset_name_for_unit_at_zorder = (unit_name, zorder) => {
+		let { assets, asset_list, assets_meta, unit_types } = this.static_vals;
+		
+		let myvar = unit_name == 'cursor'
+			?
+			'cursor'
+			:
+			_.first(_.first(
+				_.find( unit_types, (value, index) => {
+					return value.name == unit_name;
+				}).variants
+			).graphics).id;
+		
+		return myvar;
+	}
 	
 	draw_image_for_tile_type_at_zorder = (tile_name, ctx, zorder) => {
 		this.draw_image_for_asset_name(
 			this.get_asset_name_for_tile_at_zorder(tile_name, zorder),
+			ctx
+		);
+	}
+
+	draw_image_for_unit_type_at_zorder = (unit_name, ctx, zorder) => {
+		this.draw_image_for_asset_name(
+			this.get_asset_name_for_unit_at_zorder(unit_name, zorder),
 			ctx
 		);
 	}

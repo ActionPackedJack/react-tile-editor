@@ -52,6 +52,21 @@ class Editor_View extends React.Component {
 				})
 			}
 			</div>
+			<div className="unit_palette">
+			{
+				this.state.assets_loaded
+				&&
+				this._Asset_Manager.yield_unit_name_list().map( (value, index) => {
+					return	<Unit_Palette_Element
+								asset_manager={this._Asset_Manager}
+								unit_name={value}
+								key={value}
+								selected_unit_type={this.state.selected_unit_type}
+								handle_click={ () => this.setState({selected_unit_type: value}) }
+							/>
+				})
+			}
+			</div>
 		</div>;
 	}
 

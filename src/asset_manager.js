@@ -159,6 +159,13 @@ class Asset_Manager {
 			})
 		);
 	}
+	yield_unit_name_list = () => {
+		return _.sortedUniq(
+			_.map( this.static_vals.unit_types, (value,index)=>{
+				return value.name;
+			})
+		);
+	}
 
 	yield_full_zorder_list = () => {
 			/*

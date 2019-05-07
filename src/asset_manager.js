@@ -81,6 +81,33 @@ class Asset_Manager {
 					w: 54,
 					h: 34,
 				},
+			},{
+				url: "window-icon.png",
+				name: "frogatto-icon",
+				bounds: {
+					x: 1,
+					y: 241,
+					w: 54,
+					h: 34,
+				},
+			},{
+				url: "stand_in_selector.png",
+				name: "nondescript-square",
+				bounds: {
+					x: 1,
+					y: 241,
+					w: 54,
+					h: 34,
+				},
+			},{
+				url: "cursor.png",
+				name: "finger",
+				bounds: {
+					x: 1,
+					y: 241,
+					w: 54,
+					h: 34,
+				},
 			}],
 			assets: {},
 			assets_meta: {},
@@ -138,54 +165,33 @@ class Asset_Manager {
 			],
 			unit_types: [
 				{
-					name: "grass",
+					name: "frogatto-icon",
 					variants: [{
 							graphics: [{
-								id: 'grass1',
+								id: 'frogatto-icon',
 								zorder: 0,
 							}],
-						},{
-							graphics: [{
-								id: 'grass2',
-								zorder: 0,
-							}],
-						},{
-							graphics: [{
-								id: 'grass3',
-								zorder: 0,
-							}],
-						},{
-							graphics: [{
-								id: 'grass4',
-								zorder: 0,
-							}],
-						}
+						},
 					],
 				},{
-					name: "dirt",
+					name: "nondescript-square",
 					variants: [{
-						graphics: [{
-							id: 'dirt1',
-							zorder: 0,
-						}],
-					},{
-						graphics: [{
-							id: 'dirt2',
-							zorder: 0,
-						}],
-					}],
+							graphics: [{
+								id: 'nondescript-square',
+								zorder: 0,
+							}],
+						},
+					],
 				},{
-					name: "menhir",
+					name: "finger",
 					variants: [{
-						graphics: [{
-							id: 'dirt1',
-							zorder: 0,
-						},{
-							id: 'menhir1',
-							zorder: 1,
-						}],
-					}],
-				}
+							graphics: [{
+								id: 'finger',
+								zorder: 0,
+							}],
+						},
+					],
+				},
 			]
 		};
 		
